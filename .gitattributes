@@ -1,0 +1,5 @@
+*.exe filter=lfs diff=lfs merge=lfs -text
+* linguist-vendored
+*.js linguist-vendored=false
+*.css linguist-vendored=false
+index.html linguist-vendored=false
