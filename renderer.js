@@ -1,6 +1,4 @@
 const renderStats = (stats) => {
-    const UIDom = document.querySelector("#stats");
-    //UIDom.innerHTML = JSON.stringify(stats);
     gsap.registerPlugin("TextPlugin");
     gsap.to(".healthBar", {
         duration: 1.5,

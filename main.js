@@ -1,4 +1,4 @@
-var player = {
+const player = {
     stats : {
         health : 100,
         maxHealth : 100,

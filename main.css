@@ -4,14 +4,19 @@
 }
 
 body {
-    display:grid;
-    padding:0;
+  display:grid;
+  padding:0;
 }
 
 #stats {
   display:block;
-  
+  position:absolute;
+  top:0;
+  left:0;
+  width:18vw;
+  height:100vh;
   margin:0;
+  background:#ddd;
 }
 .magicBar {width: 100%; background-color: rgb(73, 143, 224);display:block;height:100%;}
 .healthBar {width: 100%; background-color: #f44336;display:block;height:100%;}
@@ -20,7 +25,7 @@ body {
   height:50px;
   max-height:100px;
   background-color: #ddd;
-  margin:4px;
+  margin:4px auto;
   border:3px solid grey;
 }
 .bars {
@@ -35,4 +40,33 @@ body {
   white-space: nowrap;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black;
+}
+
+#other-stats {
+  display:flex;
+}
+
+#other-stats div{
+  width:33%;
+  display: flex;
+  height:120px;
+  justify-content: center;
+  align-items:center;
+  justify-content:center;
+}
+#other-stats div p{
+  display:block;
+  position: absolute;
+  text-align:center;
+  font-size:38px;
+  font-family: 'Varela Round', sans-serif;
+  font-weight:bold;
+  color:white;
+  white-space: nowrap;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+#other-stats div svg{
+  margin:0 auto;
+  display:block;
 }
