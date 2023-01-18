@@ -1,0 +1,49 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display:flex;
+    flex-wrap: wrap;
+    grid-template-columns: repeat(3, 1fr);
+    padding:0;
+}
+
+#stats {
+    background:red;
+    margin:0;
+    flex-grow:1;
+    border:1px dotted black;
+}
+
+#healthBarContainer {
+    background:rgb(145, 145, 145);
+    height:100;
+    width:550px;
+    padding:4px;
+    margin:auto;
+    display:block;
+}
+
+#healthBar {
+    background:rgb(224, 73, 73);
+    width:550px;
+    height:100px;
+    display:block;
+    color:white;
+}
+
+#magicBarContainer {
+    background:rgb(145, 145, 145);
+    height:25%;
+    width:90%;
+    padding:4px;
+    margin:auto;
+}
+
+#magicBar {
+    background:rgb(73, 143, 224);
+    width:100%;
+    height:100%;
+    color:white;
+}
