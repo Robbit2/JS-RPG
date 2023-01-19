@@ -13,3 +13,7 @@ const renderStats = (stats) => {
     gsap.to(".magicBar", {duration: 1, text : `${stats.magicPoints} / ${stats.magicPointsMax}`,ease: Expo.easeInOut})
   gsap.to(".healthBar", {duration: 1, text : `${stats.health} / ${stats.maxHealth}`,ease: Expo.easeInOut})
 };
+
+const renderInventory = (inventory) => {
+  return inventory;
+};

@@ -1,11 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 * {
     box-sizing: border-box;
+    font-family: 'Varela Round', sans-serif;
+}
+
+.darkmode-layer, .darkmode-toggle {
+  z-index: 500;
 }
 
 body {
   display:grid;
   padding:0;
+  overflow:hidden;
 }
 
 #stats {
@@ -21,7 +27,7 @@ body {
 .magicBar {width: 100%; background-color: rgb(73, 143, 224);display:block;height:100%;}
 .healthBar {width: 100%; background-color: #f44336;display:block;height:100%;}
 .bar-container {
-  width: 300px;
+  width: 95%;
   height:50px;
   max-height:100px;
   background-color: #ddd;
@@ -33,7 +39,6 @@ body {
   padding-top: 10px;
   padding-bottom: 10px;
   color: white;
-  font-family: 'Varela Round', sans-serif;
   font-size:20px;
   font-weight:bold;
   overflow:visible;
@@ -58,7 +63,7 @@ body {
   display:block;
   position: absolute;
   text-align:center;
-  font-size:38px;
+  font-size:1.5em;
   font-family: 'Varela Round', sans-serif;
   font-weight:bold;
   color:white;
@@ -69,4 +74,112 @@ body {
 #other-stats div svg{
   margin:0 auto;
   display:block;
+}
+
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+.tab button {
+  background-color: inherit;
+  position:relative;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+  height:8vh;
+}
+
+.tab button:hover {
+  background-color: #ddd;
+}
+
+.tab button.active {
+  background-color: #ccc;
+}
+
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+  height:92vh;
+  position:absolute;
+  top:8vh;
+  right:0;
+  width:82vw;
+  background:#d4d4d4;
+  animation: fadeEffect 1s;
+}
+#main-content{
+  width:82vw;
+  height:100vw;
+  position:absolute;
+  top:0;
+  left:18vw;
+}
+
+.darkmode--activated #stats #other-stats #swordSVG, .darkmode--activated #stats #other-stats #shieldSVG, .darkmode--activated #stats #other-stats #coinsSVG {
+  mix-blend-mode: difference;
+}
+.darkmode--activated #stats .magicBar, .darkmode--activated #stats .healthBar{
+  mix-blend-mode: difference;
+}
+
+#player-items {
+  height:95%;
+  width:33%;
+  margin:2% 0;
+  background:#ccc;
+  border:6px solid #949494;
+  position:relative;
+  text-align:center;
+}
+
+#player-items div{
+  height:64px;
+  width:64px;
+  background:#ccc;
+  border:6px solid #949494;
+  position:absolute;
+}
+
+#player-items p{
+  font-size:20px;
+  position:absolute;
+  top:2%;
+  width:33%;
+  text-align:center;
+  left:33%;
+  font-weight:bold;
+}
+
+.darkmode--activated #main-content #Player #player-items p {
+  color:black;
+}
+
+#player-items #head { left:12%; top:12%;}
+#player-items #charm {right:13%; top:13%;}
+#player-items #mainhand {left:3%; top:50%;}
+#player-items #body {right:4%; top:32%;}
+#player-items #offhand {right:7%; top:65%;}
+#player-items #legs {left:10%; bottom:5%;}
+
+#inventory {
+  height:95%;
+  width:33%;
+  margin:2% 0;
+  background:#ccc;
+  border:6px solid #949494;
+  position:absolute;
+  text-align:center;
+  display:block;
+  float:right;
+  top:2%;
+  right:2%;
 }
