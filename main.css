@@ -68,6 +68,7 @@ body {
   font-weight:bold;
   color:white;
   white-space: nowrap;
+  overflow-wrap:break-word;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black;
 }
@@ -150,7 +151,7 @@ body {
 }
 
 #player-items p{
-  font-size:2em;
+  font-size:1.75em;
   position:absolute;
   top:2%;
   width:33%;
@@ -169,6 +170,10 @@ body {
 #player-items #body {right:4%; top:32%;}
 #player-items #offhand {right:7%; top:65%;}
 #player-items #legs {left:10%; bottom:5%;}
+
+#player-items #head div {margin:0px;border:none;height:100%;width:100%;}
+#player-items #charm div {margin:0px;border:none;height:100%;width:100%;}
+#player-items #body div {margin:0px;border:none;height:100%;width:100%;}
 
 #inventory {
   height:95%;
@@ -206,11 +211,4 @@ body {
 
 .darkmode--activated #main-content #Player #bag #item img {
   mix-blend-mode: difference;
-}
-
-#tooltip {
-  background:#ccc;
-  border:6px solid #949494;
-  border-radius: 25%;
-  width:10vw;
 }

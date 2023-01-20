@@ -2,7 +2,7 @@ const player = {
     stats : {
         health : 100,
         maxHealth : 100,
-        strength : 1,
+        strength : 10000000000,
         defense : 1,
         magicPoints : 10,
         magicPointsMax : 10,
@@ -23,18 +23,10 @@ const player = {
     }
 };
 
-var drake = dragula([document.querySelector("#bag"),document.querySelector("#head")],{
-    accepts : function (el, target, source, sibling){
-        if(target.classlist.contains("one-drop") && target.childElementCount === 0){
-            return true;
-        }else{
-            return false;
-        }
-    }
-})
-
 renderStats(player.stats);
 renderInventory(player.bag);
 setInterval(() => {
     renderOtherStats(player.stats);
 },50)
+
+var drake = dragula([document.querySelector("#bag"),document.querySelector("#head"),document.querySelector("#charm"),document.querySelector("#body")],{accepts : function (el, target, source, sibling){return true;}});
