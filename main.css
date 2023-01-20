@@ -150,7 +150,7 @@ body {
 }
 
 #player-items p{
-  font-size:20px;
+  font-size:2em;
   position:absolute;
   top:2%;
   width:33%;
@@ -172,7 +172,7 @@ body {
 
 #inventory {
   height:95%;
-  width:33%;
+  width:60%;
   margin:2% 0;
   background:#ccc;
   border:6px solid #949494;
@@ -180,6 +180,37 @@ body {
   text-align:center;
   display:block;
   float:right;
-  top:2%;
+  top:0;
   right:2%;
+}
+
+#inventoryinfo {
+  border-bottom:2px solid #949494;
+  height:5%;
+}
+
+#bag {
+  height:95%;
+  width:100%;
+  position:relative;
+}
+
+#bag #item{
+  height:64px;
+  width:64px;
+  margin:4px;
+  background:#ccc;
+  border:6px solid #949494;
+  display:inline-block;
+}
+
+.darkmode--activated #main-content #Player #bag #item img {
+  mix-blend-mode: difference;
+}
+
+#tooltip {
+  background:#ccc;
+  border:6px solid #949494;
+  border-radius: 25%;
+  width:10vw;
 }
