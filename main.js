@@ -23,6 +23,16 @@ const player = {
     }
 };
 
+var drake = dragula([document.querySelector("#bag"),document.querySelector("#head")],{
+    accepts : function (el, target, source, sibling){
+        if(target.classlist.contains("one-drop") && target.childElementCount === 0){
+            return true;
+        }else{
+            return false;
+        }
+    }
+})
+
 renderStats(player.stats);
 renderInventory(player.bag);
 setInterval(() => {
