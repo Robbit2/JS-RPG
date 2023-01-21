@@ -1,3 +1,5 @@
+const $VERSION = "0.1.0--alpha"
+
 const player = {
     stats : {
         health : 100,
