@@ -15,8 +15,14 @@ const renderStats = (stats) => {
 };
 
 const renderInventory = (inventory) => {
+  let bagweight = 0;
   for(item in inventory.contents){
-    document.querySelector("#bag").innerHTML += `<div id="item"><img src="${inventory.contents[item].image}" height="100%" width="100%" data-item="${JSON.stringify(inventory.contents[item])}"></div>`;
+    bagweight += inventory.contents[item].weight;
+    if(inventory.contents[item].uuid === null){
+      inventory.contents[item].uuid = uuid.v4();
+    }
+    document.querySelector("#bag-weight").innerHTML = `Weight: ${numeral(bagweight).format("0.0")} <svg fill="#000000" width="16px" height="16px" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M510.28 445.86l-73.03-292.13c-3.8-15.19-16.44-25.72-30.87-25.72h-60.25c3.57-10.05 5.88-20.72 5.88-32 0-53.02-42.98-96-96-96s-96 42.98-96 96c0 11.28 2.3 21.95 5.88 32h-60.25c-14.43 0-27.08 10.54-30.87 25.72L1.72 445.86C-6.61 479.17 16.38 512 48.03 512h415.95c31.64 0 54.63-32.83 46.3-66.14zM256 128c-17.64 0-32-14.36-32-32s14.36-32 32-32 32 14.36 32 32-14.36 32-32 32z"></path></g></svg>`;
+    document.querySelector("#bag").innerHTML += `<div id="item" data-item='${JSON.stringify(inventory.contents[item])}'><img src="${inventory.contents[item].image}" height="100%" width="100%"></div>`;
   }
 };
 
