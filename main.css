@@ -215,3 +215,52 @@ body {
 .darkmode--activated #main-content #Player #bag #item img {
   mix-blend-mode: difference;
 }
+
+.darkmode--activated #main-content #Player #player-items div img {
+  mix-blend-mode: difference;
+}
+
+.tooltip {
+  position:relative;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #949494;
+  border:3px solid black;
+  color:#ccc;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  top: -5px;
+  left: 64px;
+  max-width:200px;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.tooltip .tooltiptext::after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  right: 100%; /* To the left of the tooltip */
+  margin-top: -5px;
+  border-width: 7px;
+  border-style: solid;
+  border-color: transparent black transparent transparent;
+}
+
+.tooltip .tooltiptext:hover{
+  visibility:hidden;
+}
+
+.tooltip:hover:focus .tooltiptext{
+  visibility:hidden;
+}

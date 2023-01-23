@@ -13,7 +13,7 @@ const player = {
     bag : {
         weight : 0,
         maxWeight : 200,
-        contents : [{image:'./img/copper_coin.png',type:"armor.body",weight:0.1}]
+        contents : []
     },
     equipped : {
         head : null,
@@ -24,6 +24,8 @@ const player = {
         charm : null
     }
 };
+
+player.bag.contents.push(searchItemDB("item:copper_coin"));
 
 renderStats(player.stats);
 renderInventory(player.bag);
