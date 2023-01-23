@@ -164,8 +164,8 @@ body {
   color:black;
 }
 
-#player-items #head { left:12%; top:12%;}
-#player-items #charm {right:13%; top:13%;}
+#player-items #head { left:12%; top:12%;background:url("./img/ui/helmet_background.png");background-repeat: no-repeat;background-size: cover;}
+#player-items #charm {right:13%; top:13%;background:url("./img/ui/charm-background.png");background-repeat: no-repeat;background-size: cover;}
 #player-items #mainhand {left:3%; top:50%;}
 #player-items #body {right:4%; top:32%;}
 #player-items #offhand {right:7%; top:65%;}

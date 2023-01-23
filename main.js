@@ -13,7 +13,7 @@ const player = {
     bag : {
         weight : 0,
         maxWeight : 200,
-        contents : []
+        contents : [{image:'./img/copper_coin.png',type:"armor.body",weight:0.1}]
     },
     equipped : {
         head : null,
@@ -52,4 +52,16 @@ var drake = dragula([document.querySelector("#bag"),document.querySelector("#hea
             return true;
         }
     }
+}).on('drop', function (el, source) {
+    //alert(el.getAttribute("data-pos"));
+    if(source.classList.contains("one-drop")){
+        let item = el.getAttribute("data-item");
+        player.equipped[JSON.parse(item).type.split(".")[1]] = item;
+        player.bag.contents.splice(el.getAttribute("data-pos"),1);
+        renderInventory(player.bag);
+    }else{
+        let item = el.getAttribute("data-item");
+        player.equipped[JSON.parse(item).type.split(".")[1]] = null;
+    }
+    return true;
 });

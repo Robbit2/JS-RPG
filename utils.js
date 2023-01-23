@@ -22,3 +22,7 @@ function mouseCoordinates(event){
   return [xPos, yPos];
   
 }
+
+function getTotalStats(stats){
+  return true;
+}
