@@ -212,11 +212,19 @@ body {
   display:inline-block;
 }
 
+.gilded {
+  filter: drop-shadow(0 0 0.75rem rgb(255, 217, 0));
+}
+
 .darkmode--activated #main-content #Player #bag #item img {
   mix-blend-mode: difference;
 }
 
 .darkmode--activated #main-content #Player #player-items div img {
+  mix-blend-mode: difference;
+}
+
+.darkmode--activated #main-content #Player #player-items #item .tooltiptext {
   mix-blend-mode: difference;
 }
 

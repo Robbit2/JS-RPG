@@ -1,10 +1,15 @@
 const rarities = {
-  Common: "white",
-  Uncommon : "#13dc2c"
+  Common: "lightgrey",
+  Uncommon : "#13dc2c",
+  Rare: "#4287f5",
+  Epic: "#9042f5",
+  Legendary : "#f5bf42",
+  Mythical : "#de50bf",
+  Special : "#e82727"
 }
 
 class Item {
-  constructor({name, level, gilded = false, rarity, type, item, img, strength, damage, defense, reforge, stars, id, weight, dmgBuff, strBuff}){
+  constructor({name, level, gilded = false, rarity, type, item, img, strength, damage, defense, reforge, stars, id, weight, dmgBuff, strBuff, defBuff}){
     this.name = name;
     this.level = level;
     this.gilded = gilded;
@@ -21,16 +26,14 @@ class Item {
     this.weight = weight;
     this.dmgBuff = dmgBuff;
     this.strBuff = strBuff;
-  }
-
-  getName(){
-    return `[Lv.${this.level}] ${this.reforge} ${this.name} ${this.stars}`;
+    this.defBuff = defBuff;
+    this.uuid = uuid.v4();
   }
   
 }
 
 const items = {
-  copper_coin : new Item({name:"Copper Coin", level:1, gilded:false, rarity:"Common", type:"item.mainhand", item:"Collectable", img:"./img/copper_coin.png", strength:0, damage:0, defense:0, reforge:"E", stars:"", id:"item:copper_coin",weight:0.1, dmgBuff:1, strBuff:1})
+  copper_coin : new Item({name:"Copper Coin", level:0, gilded:false, rarity:"Common", type:"item.mainhand", item:"Collectible", img:"./img/copper_coin.png", strength:0, damage:0, defense:0, reforge:"", stars:"", id:"item:copper_coin",weight:0.1, dmgBuff:0, strBuff:0, defBuff:0})
 };
 
 const searchItemDB = (query) => {

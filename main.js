@@ -1,6 +1,6 @@
-const $VERSION = "0.1.0--alpha"
+const $VERSION = "0.1.3--alpha"
 
-const player = {
+var player = {
     stats : {
         health : 100,
         maxHealth : 100,
@@ -25,14 +25,21 @@ const player = {
     }
 };
 
-player.bag.contents.push(searchItemDB("item:copper_coin"));
+if(localStorage.Save !== undefined){
+  player = JSON.parse(localStorage.Save);
+}
 
-renderStats(player.stats);
-renderInventory(player.bag);
-setInterval(() => {
-    renderOtherStats(player.stats);
-},50)
+player.bag.contents.push(searchItemDB("item:copper_coin"))
 
+setTimeout(() => {
+  renderStats(player.stats);
+  renderInventory(player.bag);
+  renderEquipped(player.equipped);
+  setInterval(() => {
+      renderOtherStats(player.stats);
+      localStorage.Save = JSON.stringify(player);
+  },50);
+},250);
 
 var drake = dragula([document.querySelector("#bag"),document.querySelector("#head"),document.querySelector("#charm"),document.querySelector("#body"),document.querySelector("#mainhand"),document.querySelector("#offhand"),document.querySelector("#legs")],
 {   
@@ -58,12 +65,13 @@ var drake = dragula([document.querySelector("#bag"),document.querySelector("#hea
     //alert(el.getAttribute("data-pos"));
     if(source.classList.contains("one-drop")){
         let item = el.getAttribute("data-item");
-        player.equipped[JSON.parse(item).type.split(".")[1]] = item;
-        player.bag.contents.splice(el.getAttribute("data-pos"),1);
+        player.equipped[JSON.parse(item).type.split(".")[1]] = JSON.parse(item);
+        player.bag.contents.slice(el.getAttribute("data-pos"),1);
         renderInventory(player.bag);
     }else{
         let item = el.getAttribute("data-item");
         player.equipped[JSON.parse(item).type.split(".")[1]] = null;
+      renderInventory(player.bag);
     }
     return true;
 });
