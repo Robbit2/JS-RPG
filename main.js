@@ -29,8 +29,6 @@ if(localStorage.Save !== undefined){
   player = JSON.parse(localStorage.Save);
 }
 
-player.bag.contents.push(searchItemDB("item:copper_coin"))
-
 setTimeout(() => {
   renderStats(player.stats);
   renderInventory(player.bag);
@@ -65,13 +63,14 @@ var drake = dragula([document.querySelector("#bag"),document.querySelector("#hea
     //alert(el.getAttribute("data-pos"));
     if(source.classList.contains("one-drop")){
         let item = el.getAttribute("data-item");
+        player.bag.contents.splice(el.getAttribute("data-pos"),1);
         player.equipped[JSON.parse(item).type.split(".")[1]] = JSON.parse(item);
-        player.bag.contents.slice(el.getAttribute("data-pos"),1);
         renderInventory(player.bag);
     }else{
         let item = el.getAttribute("data-item");
         player.equipped[JSON.parse(item).type.split(".")[1]] = null;
-      renderInventory(player.bag);
+        player.bag.contents.push(JSON.parse(item));
+        renderInventory(player.bag);
     }
     return true;
 });
