@@ -29,15 +29,13 @@ if(localStorage.Save !== undefined){
   player = JSON.parse(localStorage.Save);
 }
 
-setTimeout(() => {
-  renderStats(player.stats);
-  renderInventory(player.bag);
-  renderEquipped(player.equipped);
-  setInterval(() => {
-      renderOtherStats(player.stats);
-      localStorage.Save = JSON.stringify(player);
-  },50);
-},250);
+renderStats(player.stats);
+renderInventory(player.bag);
+renderEquipped(player.equipped);
+setInterval(() => {
+    renderOtherStats(player.stats);
+    localStorage.Save = JSON.stringify(player);
+},50);
 
 var drake = dragula([document.querySelector("#bag"),document.querySelector("#head"),document.querySelector("#charm"),document.querySelector("#body"),document.querySelector("#mainhand"),document.querySelector("#offhand"),document.querySelector("#legs")],
 {   

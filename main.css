@@ -132,7 +132,7 @@ body {
   mix-blend-mode: difference;
 }
 
-#player-items {
+#player-items, #forge {
   height:95%;
   width:33%;
   margin:2% 0;
@@ -150,7 +150,7 @@ body {
   position:absolute;
 }
 
-#player-items p{
+#player-items p, #forge p{
   font-size:1.75em;
   position:absolute;
   top:2%;
@@ -166,9 +166,9 @@ body {
 
 #player-items #head { left:12%; top:12%;background:url("./img/ui/helmet_background.png");background-repeat: no-repeat;background-size: cover;}
 #player-items #charm {right:13%; top:13%;background:url("./img/ui/charm-background.png");background-repeat: no-repeat;background-size: cover;}
-#player-items #mainhand {left:3%; top:50%;}
+#player-items #mainhand {left:3%; top:50%;background:url("./img/ui/mainhand-background.png");background-repeat: no-repeat;background-size: cover;}
 #player-items #body {right:4%; top:32%;background:url("./img/ui/body-background.png");background-repeat: no-repeat;background-size: cover;}
-#player-items #offhand {right:7%; top:65%;}
+#player-items #offhand {right:7%; top:65%;background:url("./img/ui/offhand-background.png");background-repeat: no-repeat;background-size: cover;}
 #player-items #legs {left:10%; bottom:5%;background:url("./img/ui/legs-background.png");background-repeat: no-repeat;background-size: cover;}
 
 #player-items #head div {margin:0px;border:none;height:100%;width:100%;}
@@ -271,4 +271,24 @@ body {
 
 .tooltip:hover:focus .tooltiptext{
   visibility:hidden;
+}
+
+#forge svg{
+  position:absolute;
+  top:5rem;
+  left:0;
+  height:90%;
+  width:100%;
+}
+
+#forge #forge-item {
+  height:10em;
+  width:10em;
+  margin:4px auto;
+  background:#ccc;
+  border:6px solid #949494;
+  display:inline-block;
+  position:absolute;
+  top:50%;
+  left:10em;
 }
